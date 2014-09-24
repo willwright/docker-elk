@@ -13,6 +13,8 @@ RUN apt-get install wget -y
 #
 RUN apt-get install redis-server -y
 
+ADD etc/redis/redis.conf /etc/redis/redis.conf
+
 #
 #   ElasticSearch
 #
@@ -58,5 +60,7 @@ ADD etc/logstash/conf.d/central.conf /etc/logstash/conf.d/central.conf
 #
 RUN apt-get install -y supervisor
 ADD etc/supervisor/conf.d/ /etc/supervisor/conf.d/
+
+EXPOSE 80 9200 6379
 
 CMD /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
