@@ -1,12 +1,12 @@
 ELK stack with Redis input queue, built on Ubuntu base.
 
 Installed Services:
-* Redis
-* ElasticSearch
-* Kibana
-* Nginx
-* Logstash
-* Supervisord
+- Redis
+- ElasticSearch
+- Kibana
+- Nginx
+- Logstash
+- Supervisord
 
 **How to use:**
 
