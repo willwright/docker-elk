@@ -61,7 +61,7 @@ ADD etc/default/elasticsearch /etc/default/elasticsearch
 ADD etc/init.d/elasticsearch /etc/init.d/elasticsearch
 ADD etc/elasticsearch/ /etc/elasticsearch/
 
-ADD etc/redis/redis.conf /etc/redis/redis.conf
+#ADD etc/redis/redis.conf /etc/redis/redis.conf
 
 ADD etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
