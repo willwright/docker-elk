@@ -25,6 +25,7 @@ docker run -d --name elk -p 80:80 -p 6379:6379 -v /var/lib/elasticsearch:/var/li
 ```
 
 **Logstash Source Example**
+
 ```
 input {
     file {
