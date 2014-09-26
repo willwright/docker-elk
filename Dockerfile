@@ -18,9 +18,9 @@ RUN apt-get install redis-server -y
 #
 RUN apt-get install default-jre -y && \
     wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add - && \
-    echo deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main >> /etc/apt/sources.list && \
+    echo deb http://packages.elasticsearch.org/elasticsearch/1.1/debian stable main >> /etc/apt/sources.list.d/elasticsearch.list && \
     apt-get update && \
-    apt-get install elasticsearch -y
+    apt-get install elasticsearch=1.1.1 -y
 
 #
 #   Kibana
