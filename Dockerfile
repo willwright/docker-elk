@@ -18,7 +18,7 @@ RUN apt-get install redis-server -y
 #
 RUN apt-get install default-jre -y && \
     wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add - && \
-    echo deb http://packages.elasticsearch.org/elasticsearch/1.1/debian stable main >> /etc/apt/sources.list.d/elasticsearch.list && \
+    echo 'deb http://packages.elasticsearch.org/elasticsearch/1.1/debian stable main' >> /etc/apt/sources.list.d/elasticsearch.list && \
     apt-get update && \
     apt-get install elasticsearch=1.1.1 -y
 
@@ -28,8 +28,8 @@ RUN apt-get install default-jre -y && \
 RUN cd ~; wget https://download.elasticsearch.org/kibana/kibana/kibana-3.0.1.tar.gz && \
     tar xvf kibana-3.0.1.tar.gz && \
     mkdir -p /var/www/html && \
-    cp -r kibana-3.0.1/* /var/www/html && \
-    rm -rf kibana-3.0.1
+    cp -R ~/kibana-3.0.1/* /var/www/html/ && \
+    rm -rf ~/kibana-3.0.1
 
 #
 #   Nginx
@@ -43,9 +43,9 @@ RUN wget -qO - http://nginx.org/keys/nginx_signing.key | sudo apt-key add - && \
 #
 #   Logstash
 #
-RUN echo deb http://packages.elasticsearch.org/logstash/1.4/debian stable main | sudo tee /etc/apt/sources.list.d/logstash.list && \
+RUN echo 'deb http://packages.elasticsearch.org/logstash/1.4/debian stable main' | sudo tee /etc/apt/sources.list.d/logstash.list && \
     apt-get update && \
-    apt-get install logstash -y
+    apt-get install logstash=1.4.2-1-2c0f5a1 -y
 
 #
 #   Supervisord

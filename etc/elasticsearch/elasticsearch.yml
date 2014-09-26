@@ -29,7 +29,7 @@
 # Cluster name identifies your cluster for auto-discovery. If you're running
 # multiple clusters on the same network, make sure you're using unique names.
 #
-cluster.name: elasticsearch
+# cluster.name: elasticsearch
 
 
 #################################### Node #####################################
@@ -209,7 +209,7 @@ cluster.name: elasticsearch
 
 # Set both 'bind_host' and 'publish_host':
 #
-#network.host: 192.168.0.1
+network.host: localhost
 
 # Set a custom port for the node to node communication (9300 by default):
 #
@@ -383,3 +383,5 @@ cluster.name: elasticsearch
 # it unless you need it is recommended (it is disabled by default).
 #
 #http.jsonp.enable: true
+
+script.disable_dynamic: true
