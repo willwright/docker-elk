@@ -63,6 +63,8 @@ ADD etc/elasticsearch/ /etc/elasticsearch/
 
 ADD etc/redis/redis.conf /etc/redis/redis.conf
 
+ADD var/www/html/config.js /var/www/html/config.js
+
 ADD etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
 ADD etc/logstash/conf.d/central.conf /etc/logstash/conf.d/central.conf
