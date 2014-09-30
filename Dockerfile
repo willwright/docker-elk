@@ -25,11 +25,11 @@ RUN apt-get install default-jre -y && \
 #
 #   Kibana
 #
-RUN cd ~; wget https://download.elasticsearch.org/kibana/kibana/kibana-3.0.1.tar.gz && \
-    tar xvf kibana-3.0.1.tar.gz && \
+RUN cd ~; wget https://download.elasticsearch.org/kibana/kibana/kibana-3.1.0.tar.gz && \
+    tar xvf kibana-3.1.0.tar.gz && \
     mkdir -p /var/www/html && \
-    cp -R ~/kibana-3.0.1/* /var/www/html/ && \
-    rm -rf ~/kibana-3.0.1
+    cp -R ~/kibana-3.1.0/* /var/www/html/ && \
+    rm -rf ~/kibana-3.1.0
 
 #
 #   Nginx
