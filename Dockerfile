@@ -52,7 +52,7 @@ RUN echo 'deb http://packages.elasticsearch.org/logstash/1.4/debian stable main'
 #
 RUN apt-get install -y supervisor
 
-EXPOSE 80 9200 6379
+EXPOSE 80 9200 9300 6379
 
 #
 #   Inject config files at the end to optimize build cache
