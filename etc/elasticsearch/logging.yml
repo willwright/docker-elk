@@ -8,8 +8,8 @@ logger:
   com.amazonaws: WARN
 
   # gateway
-  #gateway: DEBUG
-  #index.gateway: DEBUG
+  gateway: DEBUG
+  index.gateway: DEBUG
 
   # peer shard recovery
   #indices.recovery: DEBUG
