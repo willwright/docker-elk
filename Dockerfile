@@ -23,6 +23,13 @@ RUN apt-get install default-jre -y && \
     apt-get install elasticsearch -y
 
 #
+#   Marvel
+#
+RUN cd /usr/share/elasticsearch && \
+    bin/plugin -i elasticsearch/marvel/latest && \
+    cd ~
+
+#
 #   Kibana
 #
 RUN cd ~; wget https://download.elasticsearch.org/kibana/kibana/kibana-3.1.0.tar.gz && \
@@ -58,7 +65,6 @@ EXPOSE 80 9200 9300 6379
 #   Inject config files at the end to optimize build cache
 #
 ADD etc/default/elasticsearch /etc/default/elasticsearch
-ADD etc/init.d/elasticsearch /etc/init.d/elasticsearch
 ADD etc/elasticsearch/ /etc/elasticsearch/
 
 ADD etc/redis/redis.conf /etc/redis/redis.conf

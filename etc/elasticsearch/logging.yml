@@ -8,14 +8,14 @@ logger:
   com.amazonaws: WARN
 
   # gateway
-  gateway: DEBUG
-  index.gateway: DEBUG
+  gateway: WARN
+  index.gateway: WARN
 
   # peer shard recovery
   #indices.recovery: DEBUG
 
   # discovery
-  discovery: DEBUG
+  discovery: INFO
 
   index.search.slowlog: TRACE, index_search_slow_log_file
   index.indexing.slowlog: TRACE, index_indexing_slow_log_file
