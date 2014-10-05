@@ -11,18 +11,18 @@ Installed Services:
 
 **How to use:**
 
+Ports:
+- 80 - Nginx (Kibana)
+- 6379 - Redis
+- 9200 - ElasticSearch
+- 9300 - ElasticSearch
+
+Volumes:
+- /var/lib/elasticsearch - ElasticSearch Data
+- /var/log - Logs
+
 ```
-docker run -d --name elk -p 80:80 -p 6379:6379 wwright/docker-elk
-```
-
-Port 80 for the Kibana web interface
-
-Port 6379 for Redis
-
-You'll likely want to mount the elasticsearch data directory as a volume for data persistence.
-
-```
-docker run -d --name elk -p 80:80 -p 6379:6379 -v /var/lib/elasticsearch:/var/lib/elasticsearch wwright/docker-elk
+docker run -d -p 80:80 -p 6379:6379 -p 9300:9300 -p 9200:9200 -v /mnt/data/:/var/lib/elasticsearch/ -v /var/log/:/var/log/ wwright/docker-elk
 ```
 
 **Logstash Source Example**
