@@ -1,0 +1,17 @@
+version: '2'
+services:
+  elk:
+    build: elk
+    image: elk
+    volumes:
+     - /var/lib/elasticsearch:/var/lib/elasticsearch
+    ports:
+     - "9200:9200"
+     - "5601:5601"
+     - "5000:5000"
+     - "5044:5044"
+  filebeats:
+    build: filebeats
+    image: filebeats
+    volumes:
+     - /var/log/apache2:/var/log/apache2

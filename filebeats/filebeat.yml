@@ -1,0 +1,16 @@
+output:
+  logstash:
+    enabled: true
+    hosts:
+      - elk:5044
+    timeout: 15
+filebeat:
+  prospectors:
+    -
+      paths:
+        - "/var/log/apache2/*access.log"
+      document_type: apache-access
+    -
+      paths:
+       - "/var/log/apache2/*error.log"
+      document_type: apache-error
