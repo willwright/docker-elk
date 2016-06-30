@@ -13,5 +13,7 @@ services:
   filebeats:
     build: filebeats
     image: filebeats
+    depends_on:
+     - elk
     volumes:
      - /var/log/apache2:/var/log/apache2
