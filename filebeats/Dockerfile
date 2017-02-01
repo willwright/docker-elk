@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-
+MAINTAINER Will Wright <signup@noimagination.com>
 
 ###############################################################################
 #                                INSTALLATION
@@ -11,9 +11,9 @@ RUN apt-get update -qq \
  && apt-get install -qqy curl \
  && apt-get clean
 
-RUN curl -L -O https://download.elastic.co/beats/filebeat/filebeat_1.2.3_amd64.deb \
- && dpkg -i filebeat_1.2.3_amd64.deb \
- && rm filebeat_1.2.3_amd64.deb
+RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.0.2-amd64.deb \
+ && dpkg -i filebeat-5.0.2-amd64.deb \
+ && rm filebeat-5.0.2-amd64.deb
 
 ###############################################################################
 #                                CONFIGURATION
